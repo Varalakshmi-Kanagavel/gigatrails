@@ -62,15 +62,15 @@ Platforms:
 
 ### Example Scenario
 
-Rahul is a delivery rider working with **Swiggy in Bangalore**.
+Ananya is a delivery rider working with **Zomato in Hyderabad**.
 
-On a particular day, **heavy rainfall floods several roads and restaurants temporarily close**.
+On a high-demand evening, **intense rainfall causes waterlogging across key delivery routes and multiple restaurant partners pause operations**.
 
-As a result, Rahul loses several hours of work and earns significantly less that week.
+As a result, Ananya is unable to complete enough orders and faces a noticeable drop in weekly income.
 
-With **GigaTrails AI**, the system automatically detects heavy rainfall in Rahul’s delivery zone, verifies the disruption using environmental data and rider location signals, and calculates the income loss.
+With **GigaTrails AI**, the platform detects the disruption in Ananya's delivery zone, validates the event using weather feeds, location signals, and delivery activity patterns, and estimates her protected income loss.
 
-Compensation is then **added automatically to his weekly payout** without requiring Rahul to submit a claim.
+The compensation is then **automatically credited to her weekly payout**, with no manual claim process required.
 
 ---
 
@@ -184,11 +184,13 @@ Premiums are determined based on:
 
 ### Example Pricing
 
-| City      | Risk Level | Weekly Premium |
-| --------- | ---------- | -------------- |
-| Bangalore | Low        | ₹25            |
-| Mumbai    | Medium     | ₹35            |
-| Delhi     | High       | ₹45            |
+| City      | Risk Tier | Typical Disruption Profile | Suggested Weekly Premium |
+| --------- | --------- | -------------------------- | ------------------------ |
+| Bangalore | Tier 1    | Moderate rain, low flood frequency | INR 25 |
+| Mumbai    | Tier 2    | Heavy seasonal rain, periodic flooding | INR 35 |
+| Delhi     | Tier 3    | Heatwave plus severe AQI disruption risk | INR 45 |
+
+Note: These are **Phase 1 benchmark values** for demonstration. Final premiums will be dynamically calculated using real disruption data and rider activity patterns.
 
 Dynamic pricing ensures that workers only pay premiums proportional to the risk of their operating environment.
 
