@@ -184,11 +184,11 @@ Premiums are determined based on:
 
 ### Example Pricing
 
-| City      | Risk Tier | Typical Disruption Profile | Suggested Weekly Premium |
-| --------- | --------- | -------------------------- | ------------------------ |
-| Bangalore | Tier 1    | Moderate rain, low flood frequency | INR 25 |
-| Mumbai    | Tier 2    | Heavy seasonal rain, periodic flooding | INR 35 |
-| Delhi     | Tier 3    | Heatwave plus severe AQI disruption risk | INR 45 |
+| City      | Risk Tier | Typical Disruption Profile               | Suggested Weekly Premium |
+| --------- | --------- | ---------------------------------------- | ------------------------ |
+| Bangalore | Tier 1    | Moderate rain, low flood frequency       | INR 25                   |
+| Mumbai    | Tier 2    | Heavy seasonal rain, periodic flooding   | INR 35                   |
+| Delhi     | Tier 3    | Heatwave plus severe AQI disruption risk | INR 45                   |
 
 Note: These are **Phase 1 benchmark values** for demonstration. Final premiums will be dynamically calculated using real disruption data and rider activity patterns.
 
@@ -416,14 +416,3 @@ Key innovations include:
 - mobile-first design tailored for gig workers
 
 By combining artificial intelligence, environmental data, and automated insurance logic, GigaTrails AI provides gig workers with a reliable and scalable financial safety net.
-
----
-
-If you want, I can also give you:
-
-• **the best system architecture diagram to include in the README**
-• **a better AI model design section (to impress judges)**
-• **a database schema for this project**
-• **a 2-minute demo video script**
-
-These will make your submission **look like a top 5 project in DevTrails.**
