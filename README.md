@@ -1,11 +1,11 @@
-# **GigaTrails AI – Parametric Insurance for Gig Delivery Workers**
+# **Nived-insure – Parametric Insurance for Gig Delivery Workers**
 
-## What is GigaTrails?
+## What is Nived-insure?
 
-**GigaTrails AI** is a smart parametric insurance platform built for gig delivery workers (Swiggy, Zomato, Blinkit, Zepto).  
+**Nived-insure** is a smart parametric insurance platform built for gig delivery workers (Swiggy, Zomato, Blinkit, Zepto).  
 It protects weekly income by automatically detecting real-world disruptions like heavy rain, floods, heatwaves, poor air quality, or local restrictions and triggering payouts without manual claim filing.
 
-GigaTrails combines:
+Nived-insure combines:
 
 - real-time environmental monitoring
 - AI-based risk scoring
@@ -32,13 +32,13 @@ The goal is simple: **give delivery workers a reliable financial safety net when
 
 ## Overview
 
-**GigaTrails AI** is an AI-powered parametric insurance platform designed to protect gig economy delivery workers from income loss caused by environmental or social disruptions.
+**Nived-insure** is an AI-powered parametric insurance platform designed to protect gig economy delivery workers from income loss caused by environmental or social disruptions.
 
 Food delivery riders rely heavily on daily working hours to maintain their weekly earnings. However, external disruptions such as heavy rainfall, extreme heat, severe air pollution, or local restrictions can significantly reduce their ability to work.
 
-GigaTrails AI provides an automated financial safety net that detects disruptions using real-world environmental data and automatically compensates workers for lost income.
+Nived-insure provides an automated financial safety net that detects disruptions using real-world environmental data and automatically compensates workers for lost income.
 
-Unlike traditional insurance systems that require manual claim submission and verification, GigaTrails AI follows a **parametric insurance model** where predefined environmental conditions automatically trigger payouts.
+Unlike traditional insurance systems that require manual claim submission and verification, Nived-insure follows a **parametric insurance model** where predefined environmental conditions automatically trigger payouts.
 
 The system strictly focuses on **income protection for delivery workers** and excludes coverage for health, accidents, or vehicle repairs.
 
@@ -60,7 +60,7 @@ These disruptions can reduce working hours and cause a **20–30% loss in weekly
 
 Currently, gig workers have **no automated protection against these disruptions**, leaving them financially vulnerable.
 
-GigaTrails AI addresses this challenge by creating a **data-driven parametric insurance platform** that automatically detects disruptions and compensates workers for lost income.
+Nived-insure addresses this challenge by creating a **data-driven parametric insurance platform** that automatically detects disruptions and compensates workers for lost income.
 
 ---
 
@@ -93,7 +93,7 @@ On a high-demand evening, **intense rainfall causes waterlogging across key deli
 
 As a result, Ananya is unable to complete enough orders and faces a noticeable drop in weekly income.
 
-With **GigaTrails AI**, the platform detects the disruption in Ananya's delivery zone, validates the event using weather feeds, location signals, and delivery activity patterns, and estimates her protected income loss.
+With **Nived-insure**, the platform detects the disruption in Ananya's delivery zone, validates the event using weather feeds, location signals, and delivery activity patterns, and estimates her protected income loss.
 
 The compensation is then **automatically credited to her weekly payout**, with no manual claim process required.
 
@@ -101,7 +101,7 @@ The compensation is then **automatically credited to her weekly payout**, with n
 
 ## Solution Approach
 
-GigaTrails AI is built using a **four-layer intelligent system architecture** that combines risk modeling, real-time monitoring, multi-factor verification, and automated compensation.
+Nived-insure is built using a **four-layer intelligent system architecture** that combines risk modeling, real-time monitoring, multi-factor verification, and automated compensation.
 
 This layered design ensures scalability, real-time responsiveness, and fraud-resistant insurance processing.
 
@@ -113,7 +113,7 @@ This layered design ensures scalability, real-time responsiveness, and fraud-res
 
 ## Architecture Explanation
 
-The GigaTrails AI system follows a **modular, event-driven architecture** that enables real-time disruption detection, intelligent pricing, and automated insurance payouts.
+The Nived-insure system follows a **modular, event-driven architecture** that enables real-time disruption detection, intelligent pricing, and automated insurance payouts.
 
 ### Key Flow Summary
 
@@ -300,7 +300,7 @@ Where:
 
 ## User Flow
 
-The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
+The Nived-insure user flow is designed to be simple, automated, and seamless for delivery workers.
 
 ![User Flow Diagram](diagrams/user_flow.png)
 
@@ -319,7 +319,7 @@ This flow ensures a **fully automated, zero-claim insurance experience** for gig
 
 ## Weekly Premium Model & Pricing Intelligence
 
-GigaTrails AI follows a **Hybrid Risk-Behavior Pricing Model** designed to dynamically calculate weekly insurance premiums based on environmental conditions, worker activity, and selected coverage level.
+Nived-insure follows a **Hybrid Risk-Behavior Pricing Model** designed to dynamically calculate weekly insurance premiums based on environmental conditions, worker activity, and selected coverage level.
 
 Unlike static pricing systems, this model ensures that premiums are:
 
@@ -331,7 +331,7 @@ Unlike static pricing systems, this model ensures that premiums are:
 
 ### Policy Tiers
 
-GigaTrails AI provides three flexible coverage tiers:
+Nived-insure provides three flexible coverage tiers:
 
 | Tier     | Coverage Scope                     | Protection | Factor (Cₜ) |
 | -------- | ---------------------------------- | ---------- | ----------- |
@@ -413,7 +413,7 @@ S_w = 0.5 × Consistency + 0.3 × Activity + 0.2 × Engagement
 
 ### Variable Update Mechanism
 
-The pricing model variables in GigaTrails AI are dynamically updated using real-time data, worker activity, and system controls.
+The pricing model variables in Nived-insure are dynamically updated using real-time data, worker activity, and system controls.
 
 | Variable                          | Description                               | Data Source                           | Frequency                            | Update Method                                                 |
 | --------------------------------- | ----------------------------------------- | ------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
@@ -517,7 +517,7 @@ Examples:
 
 Parametric triggers define the predefined conditions under which insurance coverage is automatically activated.
 
-Instead of manual claim requests, GigaTrails AI uses a real-time, rule-based trigger engine that continuously evaluates environmental and system signals to detect disruptions.
+Instead of manual claim requests, Nived-insure uses a real-time, rule-based trigger engine that continuously evaluates environmental and system signals to detect disruptions.
 
 ## ![User Flow Diagram](diagrams/final_decion_1.png)
 
@@ -525,7 +525,7 @@ Instead of manual claim requests, GigaTrails AI uses a real-time, rule-based tri
 
 ## AI and Machine Learning Integration
 
-GigaTrails AI uses machine learning in a **focused and practical manner** to improve pricing accuracy and ensure fraud-resistant insurance processing.
+Nived-insure uses machine learning in a **focused and practical manner** to improve pricing accuracy and ensure fraud-resistant insurance processing.
 
 AI is applied only in critical components where it adds real value, while keeping the rest of the system simple and efficient.
 
@@ -533,7 +533,7 @@ AI is applied only in critical components where it adds real value, while keepin
 
 ### 1. AI-Powered Risk Assessment (Primary Component)
 
-The core use of AI in GigaTrails AI is to compute the **Environmental Risk Score (Rₑ)**, which directly influences the weekly premium.
+The core use of AI in Nived-insure is to compute the **Environmental Risk Score (Rₑ)**, which directly influences the weekly premium.
 
 #### Approach
 
@@ -560,7 +560,7 @@ The core use of AI in GigaTrails AI is to compute the **Environmental Risk Score
 
 ### 2. Fraud Detection (Hybrid Approach)
 
-To prevent invalid claims, GigaTrails AI uses a combination of **rule-based validation and lightweight machine learning**.
+To prevent invalid claims, Nived-insure uses a combination of **rule-based validation and lightweight machine learning**.
 
 #### Rule-Based Checks
 
@@ -604,7 +604,7 @@ The system can optionally use simple predictive logic to improve intelligence.
 
 ### AI Design Philosophy
 
-GigaTrails AI follows a **practical AI approach**:
+Nived-insure follows a **practical AI approach**:
 
 - Use machine learning only where necessary
 - Prefer simple, explainable models
