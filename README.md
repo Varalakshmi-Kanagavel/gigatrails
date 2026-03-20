@@ -341,18 +341,6 @@ The pricing model variables in GigaTrails AI are dynamically updated using real-
 
 ---
 
-### Update Flow Summary
-
-```text
-1. Fetch environmental data (weather, AQI)
-2. Compute environmental risk score (Rₑ)
-3. Collect worker activity data
-4. Compute stability score (S_w)
-5. Retrieve selected coverage tier (Cₜ)
-6. Apply pricing formula
-7. Apply constraints and smoothing
-8. Output final weekly premium (P)
-```
 
 ## Premium Calculation Flow
 
