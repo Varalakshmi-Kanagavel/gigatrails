@@ -300,7 +300,7 @@ Where:
 
 ## User Flow
 
-## The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
+The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
 
 ![User Flow Diagram](diagrams/user_flow.png)
 
@@ -313,7 +313,7 @@ Where:
 7. Compensation is automatically processed and credited to the worker’s account.
 8. The worker receives a real-time notification about the payout.
 
-# This flow ensures a **fully automated, zero-claim insurance experience** for gig workers.
+This flow ensures a **fully automated, zero-claim insurance experience** for gig workers.
 
 ---
 
