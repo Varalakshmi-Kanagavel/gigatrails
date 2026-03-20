@@ -341,7 +341,6 @@ The pricing model variables in GigaTrails AI are dynamically updated using real-
 
 ---
 
-
 ## Premium Calculation Flow
 
 ```text
@@ -415,24 +414,87 @@ Examples:
 
 # Parametric Triggers
 
-Parametric triggers define the environmental conditions that activate insurance coverage.
+Parametric triggers define the **predefined measurable conditions** under which insurance coverage is automatically activated.
+
+Unlike traditional insurance systems that rely on manual claim submission, GigaTrails AI uses **data-driven trigger logic** to detect disruptions and initiate compensation automatically.
+
+---
+
+## Trigger Design Principles
+
+All triggers in GigaTrails AI are:
+
+- **Objective** → based on measurable data
+- **Automated** → no manual intervention required
+- **Location-aware** → specific to worker’s delivery zone
+- **Time-sensitive** → aligned with working hours
+
+---
 
 ## Environmental Triggers
 
-- Rainfall exceeding heavy rainfall threshold
-- Heatwave alerts above temperature threshold
-- Flood warnings in delivery zones
-- Severe AQI levels affecting outdoor work
+These triggers are based on real-time environmental conditions.
 
-## Social Triggers
+### Heavy Rain Trigger
 
-- Local curfews
-- Delivery zone shutdowns
-- Restricted access zones
+```text
+IF rainfall ≥ 50mm/hour AND duration ≥ 2 hours
+THEN trigger = TRUEHeatwave Trigger
+IF temperature ≥ 42°C
+THEN trigger = TRUE
 
-When these triggers occur in the worker’s operating location, the system automatically activates insurance protection.
+Impact: Unsafe outdoor working conditions
 
----
+Flood Trigger
+IF flood alert = TRUE OR waterlogging detected
+THEN trigger = TRUE
+
+Impact: Roads blocked, delivery disruption
+
+Air Quality (AQI) Trigger
+IF AQI ≥ 300
+THEN trigger = TRUE
+
+Impact: Health risk affecting outdoor work
+
+Social Triggers
+
+These triggers are based on administrative or regional restrictions.
+
+Curfew / Restriction Trigger
+IF government restriction = ACTIVE
+THEN trigger = TRUE
+
+Impact: Delivery services halted
+
+Zone Shutdown Trigger
+IF delivery zone access = BLOCKED
+THEN trigger = TRUE
+
+Impact: Worker cannot access delivery locations
+
+Multi-Condition Triggers (Advanced)
+
+GigaTrails AI also supports combined triggers for higher accuracy:
+
+Rainfall + Traffic slowdown → Increased disruption severity
+Heatwave + High AQI → Severe working condition risk
+Trigger Validation Conditions
+
+A trigger is considered valid only if:
+
+1. Event occurs within worker’s delivery zone
+2. Worker is active during the disruption window
+3. Environmental data confirms threshold breach
+Output of Trigger Engine
+
+Once conditions are satisfied:
+
+Trigger Status → TRUE
+
+Disruption Severity Score → Calculated
+
+Sent to Verification Layer
 
 # AI and Machine Learning Integration
 
@@ -633,3 +695,4 @@ Key innovations include:
 - mobile-first design tailored for gig workers
 
 By combining artificial intelligence, environmental data, and automated insurance logic, GigaTrails AI provides gig workers with a reliable and scalable financial safety net.
+```
