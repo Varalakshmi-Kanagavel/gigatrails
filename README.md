@@ -600,47 +600,111 @@ Once conditions are satisfied:
 
 - **Trigger Status:** TRUE
 - **Disruption Severity Score:** Calculated
-- **Sent to Verification Layer**
+- ## **Sent to Verification Layer**
+
+---
 
 ## AI and Machine Learning Integration
 
-Artificial intelligence powers multiple components of the GigaTrails AI platform.
+GigaTrails AI uses machine learning in a **focused and practical manner** to improve pricing accuracy and ensure fraud-resistant insurance processing.
+
+AI is applied only in critical components where it adds real value, while keeping the rest of the system simple and efficient.
 
 ---
 
-### AI Risk Assessment
+### 1. AI-Powered Risk Assessment (Primary Component)
 
-Machine learning models analyze historical environmental disruptions to determine risk levels across cities.
+The core use of AI in GigaTrails AI is to compute the **Environmental Risk Score (Rₑ)**, which directly influences the weekly premium.
 
-Possible models include:
+#### Approach
 
-- Random Forest
-- Gradient Boosting
-- Regression-based risk scoring
+- Historical environmental data is collected:
+  - rainfall patterns
+  - temperature trends
+  - air quality index (AQI)
+  - disruption frequency
 
-These models estimate disruption probability and determine weekly premiums.
+- A **Random Forest Regressor** is used to estimate the likelihood of disruptions in a specific delivery zone.
+
+#### Why Random Forest?
+
+- Works well with tabular data
+- Handles non-linear relationships
+- Requires minimal tuning (ideal for MVP)
+
+#### Output
+
+- Risk Score (Rₑ) between 0 and 1
+- Used in the premium calculation model
 
 ---
 
-### Fraud Detection
+### 2. Fraud Detection (Hybrid Approach)
 
-AI-based anomaly detection identifies suspicious claim behavior.
+To prevent invalid claims, GigaTrails AI uses a combination of **rule-based validation and lightweight machine learning**.
 
-Potential fraud scenarios include:
+#### Rule-Based Checks
 
-- GPS spoofing
-- Duplicate claims
-- Claim attempts outside working hours
+- worker must be active during disruption
+- GPS location must match delivery zone
+- no duplicate claims
 
-Isolation Forest and anomaly detection models are used to identify abnormal patterns.
+#### Machine Learning (Optional Enhancement)
+
+- **Isolation Forest** is used to detect abnormal claim patterns
+
+#### Input Features
+
+- GPS location consistency
+- activity logs
+- claim frequency
+- session/device patterns
+
+#### Output
+
+- Fraud Risk Flag (Low / Medium / High)
+- Suspicious claims are blocked or flagged
 
 ---
 
-### Disruption Prediction
+### 3. Disruption Prediction (Optional Enhancement)
 
-Predictive models analyze weather forecasts and environmental trends to estimate the likelihood of disruptions.
+The system can optionally use simple predictive logic to improve intelligence.
 
-This helps improve premium accuracy and allows the system to notify workers about potential upcoming disruptions.
+#### Approach
+
+- Uses weather forecasts and AQI trends
+- Applies threshold-based and trend analysis
+
+#### Output
+
+- Early disruption alerts
+- Improved risk estimation
+
+---
+
+### AI Design Philosophy
+
+GigaTrails AI follows a **practical AI approach**:
+
+- Use machine learning only where necessary
+- Prefer simple, explainable models
+- Ensure real-time performance
+- Avoid over-complex architectures
+
+---
+
+### AI Summary
+
+| Component          | Method Used              | Purpose                 |
+| ------------------ | ------------------------ | ----------------------- |
+| Risk Assessment    | Random Forest Regressor  | Dynamic premium pricing |
+| Fraud Detection    | Rules + Isolation Forest | Fraud prevention        |
+| Disruption Insight | Trend-based logic        | Early alerts (optional) |
+
+---
+
+## This approach ensures that the system is **accurate, scalable, and aligned with real-world insurance requirements**, while remaining efficient for implementation in a hackathon setting.
 
 ---
 
