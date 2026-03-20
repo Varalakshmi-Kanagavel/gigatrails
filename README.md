@@ -30,7 +30,7 @@ The system strictly focuses on **income protection for delivery workers** and ex
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 Food delivery riders working for digital platforms depend on consistent working hours to earn income.
 
@@ -50,9 +50,9 @@ GigaTrails AI addresses this challenge by creating a **data-driven parametric in
 
 ---
 
-# Target Persona
+## Target Persona
 
-## Food Delivery Riders
+### Food Delivery Riders
 
 Platforms:
 
@@ -61,7 +61,7 @@ Platforms:
 - Blinkit
 - Zepto
 
-### Characteristics
+#### Characteristics
 
 - Income depends on number of deliveries completed
 - Works outdoors for long hours
@@ -71,7 +71,7 @@ Platforms:
 
 ---
 
-### Example Scenario
+#### Example Scenario
 
 Ananya is a delivery rider working with **Zomato in Hyderabad**.
 
@@ -85,7 +85,7 @@ The compensation is then **automatically credited to her weekly payout**, with n
 
 ---
 
-# Solution Approach
+## Solution Approach
 
 GigaTrails AI is built using a **four-layer intelligent system architecture** that combines risk modeling, real-time monitoring, multi-factor verification, and automated compensation.
 
@@ -93,13 +93,13 @@ This layered design ensures scalability, real-time responsiveness, and fraud-res
 
 ---
 
-## 1. Risk Intelligence Layer (Core Decision Engine)
+### 1. Risk Intelligence Layer (Core Decision Engine)
 
 This layer is responsible for **risk modeling and pricing intelligence** at a micro-zone level.
 
 It combines environmental data and worker behavior to compute personalized insurance premiums.
 
-### Inputs
+#### Inputs
 
 - historical rainfall patterns
 - temperature and heatwave trends
@@ -108,13 +108,13 @@ It combines environmental data and worker behavior to compute personalized insur
 - delivery demand density
 - worker activity patterns
 
-### Processing
+#### Processing
 
 - Compute **Environmental Risk Score (Rₑ)**
 - Compute **Worker Stability Score (S_w)**
 - Apply **Hybrid Pricing Model**
 
-### Pricing Engine
+#### Pricing Engine
 
 The weekly premium is calculated as:
 
@@ -122,17 +122,17 @@ The weekly premium is calculated as:
 P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
 ```
 
-### Output
+#### Output
 
 - dynamic weekly premium
 - zone-level risk classification
 - disruption probability score
 
-## 2. Disruption Monitoring Layer (Real-Time Trigger Engine)
+### 2. Disruption Monitoring Layer (Real-Time Trigger Engine)
 
 This layer continuously monitors real-time external data streams to detect disruption events.
 
-### Data Sources
+#### Data Sources
 
 - Weather APIs (rainfall, temperature)
 
@@ -142,7 +142,7 @@ This layer continuously monitors real-time external data streams to detect disru
 
 - Traffic/mobility indicators (optional)
 
-### Trigger Logic
+#### Trigger Logic
 
 ```text
 IF rainfall > threshold AND duration > threshold
@@ -150,7 +150,7 @@ AND worker is active in zone
 THEN trigger = TRUE
 ```
 
-### Advanced Triggering
+#### Advanced Triggering
 
 - multi-condition triggers (rain + traffic slowdown)
 
@@ -158,17 +158,17 @@ THEN trigger = TRUE
 
 - zone-specific thresholds
 
-### Output
+#### Output
 
 - trigger event (TRUE / FALSE)
 
 - disruption severity score
 
-## 3. Smart Verification Layer (Fraud Control System)
+### 3. Smart Verification Layer (Fraud Control System)
 
 This layer ensures that all claims are valid, accurate, and fraud-resistant using multi-signal verification.
 
-### Verification Signals
+#### Verification Signals
 
 1. GPS Geo-Fencing
 
@@ -201,17 +201,17 @@ This layer ensures that all claims are valid, accurate, and fraud-resistant usin
 
 - verifies API data consistency with actual disruption
 
-### Output
+#### Output
 
 - verified claim score (0–1)
 
 - fraud risk flag
 
-## 4. Automated Compensation Layer (Payout Engine)
+### 4. Automated Compensation Layer (Payout Engine)
 
 This layer calculates and processes income protection payouts.
 
-### Inputs
+#### Inputs
 
 - worker average hourly earnings
 
@@ -221,7 +221,7 @@ This layer calculates and processes income protection payouts.
 
 - coverage tier (Cₜ)
 
-### Compensation Logic
+#### Compensation Logic
 
 ```text
 Compensation = Earnings × Loss Fraction × Coverage Factor
@@ -233,7 +233,7 @@ Where:
 
 - Coverage Factor = based on selected tier
 
-### Features
+#### Features
 
 - weekly payout aggregation
 
@@ -241,13 +241,13 @@ Where:
 
 - tier-based compensation adjustment
 
-### Output
+#### Output
 
 - final payout amount
 
 - credited to worker’s weekly earnings
 
-# Weekly Premium Model & Pricing Intelligence
+## Weekly Premium Model & Pricing Intelligence
 
 GigaTrails AI follows a **Hybrid Risk-Behavior Pricing Model** designed to dynamically calculate weekly insurance premiums based on environmental conditions, worker activity, and selected coverage level.
 
@@ -259,7 +259,7 @@ Unlike static pricing systems, this model ensures that premiums are:
 
 ---
 
-## Policy Tiers
+### Policy Tiers
 
 GigaTrails AI provides three flexible coverage tiers:
 
@@ -271,7 +271,7 @@ GigaTrails AI provides three flexible coverage tiers:
 
 ---
 
-## Core Pricing Formula
+### Core Pricing Formula
 
 ```math
 P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
@@ -279,7 +279,7 @@ P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
 
 ---
 
-## Variable Definitions
+### Variable Definitions
 
 | Variable | Description                       |
 | -------- | --------------------------------- |
@@ -293,7 +293,7 @@ P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
 
 ---
 
-## Environmental Risk Score (Rₑ)
+### Environmental Risk Score (Rₑ)
 
 The environmental risk score represents the likelihood of disruptions in the worker’s delivery zone.
 
@@ -303,7 +303,7 @@ It is computed using real-time and historical data from:
 - temperature (heatwave conditions)
 - air quality index (AQI)
 
-### Risk Calculation
+#### Risk Calculation
 
 ```math
 Rₑ = 0.4 × Rain Risk + 0.3 × Heat Risk + 0.3 × AQI Risk
@@ -311,14 +311,14 @@ Rₑ = 0.4 × Rain Risk + 0.3 × Heat Risk + 0.3 × AQI Risk
 
 Each component is normalized between **0 and 1**.
 
-### Update Frequency
+#### Update Frequency
 
 - Updated every few hours using API data
 - Aggregated weekly for pricing
 
 ---
 
-## Worker Stability Score (S_w)
+### Worker Stability Score (S_w)
 
 This score represents how consistent and active a worker is.
 
@@ -328,20 +328,20 @@ It is calculated based on:
 - average working hours
 - delivery completion consistency
 
-### Stability Calculation
+#### Stability Calculation
 
 ```math
 S_w = 0.5 × Consistency + 0.3 × Activity + 0.2 × Engagement
 ```
 
-### Behavior Impact
+#### Behavior Impact
 
 - High stability → lower premium
 - Low stability → higher premium
 
 ---
 
-## Variable Update Mechanism
+### Variable Update Mechanism
 
 The pricing model variables in GigaTrails AI are dynamically updated using real-time data, worker activity, and system controls.
 
@@ -357,7 +357,7 @@ The pricing model variables in GigaTrails AI are dynamically updated using real-
 
 ---
 
-## Premium Calculation Flow
+### Premium Calculation Flow
 
 ```text
 1. Fetch environmental data (weather, AQI)
@@ -372,7 +372,7 @@ The pricing model variables in GigaTrails AI are dynamically updated using real-
 
 ---
 
-## Example Calculation
+### Example Calculation
 
 Given:
 
@@ -391,15 +391,15 @@ Final Premium ≈ **₹26 – ₹32 per week**
 
 ---
 
-## Pricing Constraints
+### Pricing Constraints
 
-### Minimum Premium
+#### Minimum Premium
 
 ```text
 ≥ ₹15
 ```
 
-### Maximum Weekly Increase
+#### Maximum Weekly Increase
 
 ```text
 ≤ 25% increase compared to previous week
@@ -407,7 +407,7 @@ Final Premium ≈ **₹26 – ₹32 per week**
 
 ---
 
-## Premium Smoothing
+### Premium Smoothing
 
 To avoid sudden fluctuations:
 
@@ -417,7 +417,7 @@ Final Premium = 0.7 × Previous + 0.3 × New
 
 ---
 
-## Zone-Based Pricing
+### Zone-Based Pricing
 
 Premiums are calculated at a **micro-zone level**, not just city level.
 
@@ -428,7 +428,7 @@ Examples:
 
 ---
 
-# Parametric Triggers
+## Parametric Triggers
 
 Parametric triggers define the **predefined measurable conditions** under which insurance coverage is automatically activated.
 
@@ -436,7 +436,7 @@ Unlike traditional insurance systems that rely on manual claim submission, GigaT
 
 ---
 
-## Trigger Design Principles
+### Trigger Design Principles
 
 All triggers in GigaTrails AI are:
 
@@ -447,78 +447,98 @@ All triggers in GigaTrails AI are:
 
 ---
 
-## Environmental Triggers
+### Environmental Triggers
 
 These triggers are based on real-time environmental conditions.
 
-### Heavy Rain Trigger
+#### Heavy Rain Trigger
 
 ```text
 IF rainfall ≥ 50mm/hour AND duration ≥ 2 hours
-THEN trigger = TRUEHeatwave Trigger
+THEN trigger = TRUE
+```
+
+- **Impact:** Unsafe outdoor working conditions
+
+#### Heatwave Trigger
+
+```text
 IF temperature ≥ 42°C
 THEN trigger = TRUE
+```
 
-Impact: Unsafe outdoor working conditions
+- **Impact:** Unsafe outdoor working conditions
 
-Flood Trigger
+#### Flood Trigger
+
+```text
 IF flood alert = TRUE OR waterlogging detected
 THEN trigger = TRUE
+```
 
-Impact: Roads blocked, delivery disruption
+- **Impact:** Roads blocked, delivery disruption
 
-Air Quality (AQI) Trigger
+#### Air Quality (AQI) Trigger
+
+```text
 IF AQI ≥ 300
 THEN trigger = TRUE
+```
 
-Impact: Health risk affecting outdoor work
+- **Impact:** Health risk affecting outdoor work
 
-Social Triggers
+### Social Triggers
 
 These triggers are based on administrative or regional restrictions.
 
-Curfew / Restriction Trigger
+#### Curfew / Restriction Trigger
+
+```text
 IF government restriction = ACTIVE
 THEN trigger = TRUE
+```
 
-Impact: Delivery services halted
+- **Impact:** Delivery services halted
 
-Zone Shutdown Trigger
+#### Zone Shutdown Trigger
+
+```text
 IF delivery zone access = BLOCKED
 THEN trigger = TRUE
+```
 
-Impact: Worker cannot access delivery locations
+- **Impact:** Worker cannot access delivery locations
 
-Multi-Condition Triggers (Advanced)
+### Multi-Condition Triggers (Advanced)
 
 GigaTrails AI also supports combined triggers for higher accuracy:
 
-Rainfall + Traffic slowdown → Increased disruption severity
-Heatwave + High AQI → Severe working condition risk
-Trigger Validation Conditions
+- Rainfall + traffic slowdown → increased disruption severity
+- Heatwave + high AQI → severe working condition risk
+
+### Trigger Validation Conditions
 
 A trigger is considered valid only if:
 
-1. Event occurs within worker’s delivery zone
+1. Event occurs within worker's delivery zone
 2. Worker is active during the disruption window
 3. Environmental data confirms threshold breach
-Output of Trigger Engine
+
+### Output of Trigger Engine
 
 Once conditions are satisfied:
 
-Trigger Status → TRUE
+- **Trigger Status:** TRUE
+- **Disruption Severity Score:** Calculated
+- **Sent to Verification Layer**
 
-Disruption Severity Score → Calculated
-
-Sent to Verification Layer
-
-# AI and Machine Learning Integration
+## AI and Machine Learning Integration
 
 Artificial intelligence powers multiple components of the GigaTrails AI platform.
 
 ---
 
-## AI Risk Assessment
+### AI Risk Assessment
 
 Machine learning models analyze historical environmental disruptions to determine risk levels across cities.
 
@@ -532,21 +552,21 @@ These models estimate disruption probability and determine weekly premiums.
 
 ---
 
-## Fraud Detection
+### Fraud Detection
 
 AI-based anomaly detection identifies suspicious claim behavior.
 
 Potential fraud scenarios include:
 
 - GPS spoofing
-- duplicate claims
-- claim attempts outside working hours
+- Duplicate claims
+- Claim attempts outside working hours
 
 Isolation Forest and anomaly detection models are used to identify abnormal patterns.
 
 ---
 
-## Disruption Prediction
+### Disruption Prediction
 
 Predictive models analyze weather forecasts and environmental trends to estimate the likelihood of disruptions.
 
@@ -554,9 +574,9 @@ This helps improve premium accuracy and allows the system to notify workers abou
 
 ---
 
-# Platform Choice
+## Platform Choice
 
-## Mobile Application
+### Mobile Application
 
 The primary platform for GigaTrails AI will be a **mobile application**.
 
@@ -564,63 +584,65 @@ This choice is based on the working environment of delivery riders.
 
 Benefits include:
 
-- real-time GPS monitoring
-- simple onboarding for workers
-- push notifications for disruption alerts
-- quick interaction during delivery operations
+- Real-time GPS monitoring
+- Simple onboarding for workers
+- Push notifications for disruption alerts
+- Quick interaction during delivery operations
 
 The interface will be optimized for **minimal user interaction and fast access to key information**.
 
 ---
 
-# User Experience Design
+## User Experience Design
 
 The application is designed to be simple and intuitive.
 
-## Home Screen
+### Home Screen
 
 Displays:
 
-- active insurance coverage
-- weekly premium
-- disruption protection status
+- Active insurance coverage
+- Weekly premium
+- Disruption protection status
 
 ---
 
-## Disruption Alerts
+### Disruption Alerts
 
 Workers receive notifications when environmental conditions activate insurance protection.
 
 ---
 
-## Earnings Protection Dashboard
+### Earnings Protection Dashboard
 
 Workers can track:
 
-- total protected income
-- weekly compensation
-- disruption events covered
+- Total protected income
+- Weekly compensation
+- Disruption events covered
 
 ---
 
-# Technology Stack
+## Technology Stack
 
-## Frontend
+### Frontend
 
-Flutter Mobile Application
-
----
-
-## Backend
-
-FastAPI
-REST API architecture
+- Flutter Mobile Application
 
 ---
 
-## AI / Machine Learning
+### Backend
 
-Python
+- FastAPI
+- REST API architecture
+
+---
+
+### AI / Machine Learning
+
+Primary language:
+
+- Python
 
 Libraries:
 
@@ -630,36 +652,36 @@ Libraries:
 
 ---
 
-## External APIs
+### External APIs
 
-Weather Data – OpenWeather API
-Air Quality Data – AQICN API
-Location Services – Google Maps API
+- Weather Data: OpenWeather API
+- Air Quality Data: AQICN API
+- Location Services: Google Maps API
 
 ---
 
-## Database
+### Database
 
 PostgreSQL / Supabase
 
 ---
 
-## Payment Simulation
+### Payment Simulation
 
-Razorpay Sandbox
-Stripe Test Mode
+- Razorpay Sandbox
+- Stripe Test Mode
 
 ---
 
-# System Architecture
+## System Architecture
 
 _(Architecture diagram will be included here in the repository)_
 
 ---
 
-# Development Plan
+## Development Plan
 
-## Phase 1 – Research and Planning
+### Phase 1 – Research and Planning
 
 - Define user persona
 - Analyze disruption patterns
@@ -675,40 +697,39 @@ Deliverables include:
 
 ---
 
-## Phase 2 – MVP Development
+### Phase 2 – MVP Development
 
 The minimum viable product will include:
 
-- worker registration
-- insurance policy management
-- dynamic premium calculation
-- parametric trigger detection
-- automated claim processing
+- Worker registration
+- Insurance policy management
+- Dynamic premium calculation
+- Parametric trigger detection
+- Automated claim processing
 
 ---
 
-## Phase 3 – Advanced Features
+### Phase 3 – Advanced Features
 
 The final stage will include:
 
 - AI-based fraud detection
-- instant payout simulation
-- predictive disruption analysis
-- analytics dashboard
+- Instant payout simulation
+- Predictive disruption analysis
+- Analytics dashboard
 
 ---
 
-# Innovation Highlights
+## Innovation Highlights
 
 GigaTrails AI introduces an automated parametric insurance system specifically designed for gig delivery workers.
 
 Key innovations include:
 
 - AI-driven risk-based premium calculation
-- automated claim settlement without manual intervention
-- real-time environmental disruption monitoring
-- multi-factor verification using GPS, environmental APIs, and optional camera input
-- mobile-first design tailored for gig workers
+- Automated claim settlement without manual intervention
+- Real-time environmental disruption monitoring
+- Multi-factor verification using GPS, environmental APIs, and optional camera input
+- Mobile-first design tailored for gig workers
 
 By combining artificial intelligence, environmental data, and automated insurance logic, GigaTrails AI provides gig workers with a reliable and scalable financial safety net.
-```
