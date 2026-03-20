@@ -284,6 +284,24 @@ Where:
 
 ---
 
+## User Flow
+
+The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
+![User Flow Diagram](diagrams/user_flow.png)
+
+1. The worker logs into the mobile app and selects an insurance plan (Basic, Standard, or Premium).
+2. The system continuously tracks the worker’s location and activity during working hours.
+3. External data sources (weather, AQI, government alerts) are monitored in real time.
+4. When a disruption occurs, the system automatically detects it using parametric triggers.
+5. The event is verified using GPS, activity data, and environmental signals.
+6. The system calculates income loss and applies the selected coverage tier.
+7. Compensation is automatically processed and credited to the worker’s account.
+8. The worker receives a real-time notification about the payout.
+
+## This flow ensures a **fully automated, zero-claim insurance experience** for gig workers.
+
+---
+
 ## Weekly Premium Model & Pricing Intelligence
 
 GigaTrails AI follows a **Hybrid Risk-Behavior Pricing Model** designed to dynamically calculate weekly insurance premiums based on environmental conditions, worker activity, and selected coverage level.
