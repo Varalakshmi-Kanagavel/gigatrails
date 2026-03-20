@@ -118,7 +118,9 @@ The GigaTrails AI system follows a **modular, event-driven architecture** that e
 - **Multi-layer fraud detection** improves reliability and trust
 - **Scalable modular design** allows easy expansion across cities and platforms
 
-This architecture ensures that the system is **efficient, scalable, and capable of fully automated parametric insurance processing**.
+## This architecture ensures that the system is **efficient, scalable, and capable of fully automated parametric insurance processing**.
+
+---
 
 ### 1. Risk Intelligence Layer (Core Decision Engine)
 
@@ -153,7 +155,9 @@ P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
 
 - dynamic weekly premium
 - zone-level risk classification
-- disruption probability score
+- ## disruption probability score
+
+---
 
 ### 2. Disruption Monitoring Layer (Real-Time Trigger Engine)
 
@@ -191,9 +195,11 @@ THEN trigger = TRUE
 
 - disruption severity score
 
+---
+
 ### 3. Smart Verification Layer (Fraud Control System)
 
-This layer ensures that all claims are valid, accurate, and fraud-resistant using multi-signal verification.
+- This layer ensures that all claims are valid, accurate, and fraud-resistant using multi-signal verification.
 
 #### Verification Signals
 
@@ -234,6 +240,8 @@ This layer ensures that all claims are valid, accurate, and fraud-resistant usin
 
 - fraud risk flag
 
+---
+
 ### 4. Automated Compensation Layer (Payout Engine)
 
 This layer calculates and processes income protection payouts.
@@ -273,6 +281,8 @@ Where:
 - final payout amount
 
 - credited to worker’s weekly earnings
+
+---
 
 ## Weekly Premium Model & Pricing Intelligence
 
