@@ -132,7 +132,7 @@ The GigaTrails AI system follows a **modular, event-driven architecture** that e
 - **Multi-layer fraud detection** improves reliability and trust
 - **Scalable modular design** allows easy expansion across cities and platforms
 
-## This architecture ensures that the system is **efficient, scalable, and capable of fully automated parametric insurance processing**.
+# This architecture ensures that the system is **efficient, scalable, and capable of fully automated parametric insurance processing**.
 
 ---
 
@@ -300,7 +300,8 @@ Where:
 
 ## User Flow
 
-The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
+## The GigaTrails AI user flow is designed to be simple, automated, and seamless for delivery workers.
+
 ![User Flow Diagram](diagrams/user_flow.png)
 
 1. The worker logs into the mobile app and selects an insurance plan (Basic, Standard, or Premium).
