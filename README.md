@@ -345,15 +345,15 @@ S_w = 0.5 × Consistency + 0.3 × Activity + 0.2 × Engagement
 
 The pricing model variables in GigaTrails AI are dynamically updated using real-time data, worker activity, and system controls.
 
-| Variable                             | Description                                     | Data Source                           | Update Frequency                    | Update Method                                                           |
-| ------------------------------------ | ----------------------------------------------- | ------------------------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
-| **Rₑ (Environmental Risk Score)**    | Measures disruption risk in worker's zone       | Weather API, AQI API, historical data | Every 3–6 hours (aggregated weekly) | Calculated using normalized rain, heat, and AQI risk values             |
-| **S_w (Worker Stability Score)**     | Measures worker consistency and activity        | App usage, delivery activity logs     | Daily / Weekly                      | Computed using active days, working hours, and delivery completion rate |
-| **Cₜ (Coverage Tier Factor)**        | Determines level of protection selected by user | User input (app selection)            | On change (user-controlled)         | Assigned fixed values based on selected tier (Basic, Standard, Premium) |
-| **B (Base Premium)**                 | Minimum base cost of insurance                  | System configuration                  | Rarely updated                      | Fixed baseline value set by platform                                    |
-| **α (Risk Sensitivity Coefficient)** | Controls impact of environmental risk           | System configuration                  | Rarely updated                      | Tuned by admin based on risk trends                                     |
-| **β (Stability Reward Coefficient)** | Controls discount based on worker stability     | System configuration                  | Rarely updated                      | Adjusted to balance fairness and incentives                             |
-| **Final Premium (P)**                | Weekly insurance premium                        | Derived from all above variables      | Weekly                              | Computed using pricing formula with smoothing and constraints           |
+| Variable | Description | Data Source | Frequency | Update Method |
+|----------|-------------|-------------|-----------|----------------|
+| **Rₑ** (Environmental Risk Score) | Measures disruption risk in worker's zone | Weather API, AQI API, historical data | Every 3–6 hours (weekly aggregation) | Calculated using normalized rain, heat, and AQI components |
+| **S_w** (Worker Stability Score) | Measures worker consistency and activity | App usage, delivery activity logs | Daily/Weekly | Computed from active days, working hours, and completion rate |
+| **Cₜ** (Coverage Tier Factor) | Determines protection level | User input (app selection) | On user change | Fixed values: Basic (0.4), Standard (0.6), Premium (0.8) |
+| **B** (Base Premium) | Minimum base cost of insurance | System configuration | Rarely updated | Platform-defined baseline value |
+| **α** (Risk Sensitivity) | Controls environmental risk impact | System configuration | Rarely updated | Admin tuned based on risk trends |
+| **β** (Stability Reward) | Controls stability-based discount | System configuration | Rarely updated | Adjusted to balance fairness and incentives |
+| **P** (Final Premium) | Weekly insurance premium | Derived from all variables | Weekly | Computed via pricing formula with smoothing and constraints |
 
 ---
 
