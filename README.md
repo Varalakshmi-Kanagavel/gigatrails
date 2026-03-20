@@ -1,7 +1,4 @@
-Below is a **clean, strong README you can directly use** for Phase-1.
-I improved the **approach, constraints, verification system, and AI design** so it looks **more advanced than most repos**.
 
----
 
 # **GigaTrails AI – Parametric Insurance for Gig Delivery Workers**
 
