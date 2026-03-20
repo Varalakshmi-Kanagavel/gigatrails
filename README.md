@@ -625,6 +625,8 @@ Workers can track:
 
 ## Technology Stack
 
+![GigaTrails Tech Stack Diagram](diagrams/gigatrails_tech_stack_inline_svg.svg)
+
 ### Frontend
 
 - Flutter Mobile Application
@@ -673,9 +675,25 @@ PostgreSQL / Supabase
 
 ---
 
+### External APIs & Data Sources
+
+| API / Source | Data Provided | Role in System | Link |
+| --- | --- | --- | --- |
+| OpenWeather API | Rainfall, temperature, weather conditions | Real-time environmental trigger detection and risk score calculation | https://openweathermap.org |
+| OpenAQ API | Air Quality Index (AQI) levels | AQI-based triggers and environmental risk modeling | https://docs.openaq.org |
+| Google Maps API | Traffic data, route delays, road conditions | Multi-condition triggers and disruption severity estimation | https://developers.google.com/maps |
+| Government Alert Systems (NDMA) | Curfew, restriction, emergency alerts | Social triggers (zone shutdown, restrictions) | https://ndma.gov.in |
+| Open Government Data (data.gov) | Regional datasets, zone-level information | Zone validation and disruption confirmation | https://data.gov.in |
+| Flood Monitoring (FFS) | River levels, flood alerts | Flood trigger validation and high-risk detection | https://ffs.india-water.gov.in |
+| Satellite Weather (MOSDAC - ISRO) | Satellite weather, flood monitoring | Advanced environmental validation and accuracy improvement | https://mosdac.gov.in |
+| Platform APIs (Simulated) | Delivery demand, zone closures, worker activity | Activity drop detection and trigger validation | Simulated |
+
+---
+
 ## System Architecture
 
-_(Architecture diagram will be included here in the repository)_
+![System Architecture Diagram](diagrams/architecture_diagram.jpeg)
+
 
 ---
 
