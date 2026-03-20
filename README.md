@@ -91,6 +91,10 @@ GigaTrails AI is built using a **four-layer intelligent system architecture** th
 
 This layered design ensures scalability, real-time responsiveness, and fraud-resistant insurance processing.
 
+## System Architecture
+
+![System Architecture Diagram](diagrams/architecture_diagram.jpeg)
+
 ---
 
 ### 1. Risk Intelligence Layer (Core Decision Engine)
@@ -345,15 +349,15 @@ S_w = 0.5 × Consistency + 0.3 × Activity + 0.2 × Engagement
 
 The pricing model variables in GigaTrails AI are dynamically updated using real-time data, worker activity, and system controls.
 
-| Variable | Description | Data Source | Frequency | Update Method |
-|----------|-------------|-------------|-----------|----------------|
-| **Rₑ** (Environmental Risk Score) | Measures disruption risk in worker's zone | Weather API, AQI API, historical data | Every 3–6 hours (weekly aggregation) | Calculated using normalized rain, heat, and AQI components |
-| **S_w** (Worker Stability Score) | Measures worker consistency and activity | App usage, delivery activity logs | Daily/Weekly | Computed from active days, working hours, and completion rate |
-| **Cₜ** (Coverage Tier Factor) | Determines protection level | User input (app selection) | On user change | Fixed values: Basic (0.4), Standard (0.6), Premium (0.8) |
-| **B** (Base Premium) | Minimum base cost of insurance | System configuration | Rarely updated | Platform-defined baseline value |
-| **α** (Risk Sensitivity) | Controls environmental risk impact | System configuration | Rarely updated | Admin tuned based on risk trends |
-| **β** (Stability Reward) | Controls stability-based discount | System configuration | Rarely updated | Adjusted to balance fairness and incentives |
-| **P** (Final Premium) | Weekly insurance premium | Derived from all variables | Weekly | Computed via pricing formula with smoothing and constraints |
+| Variable                          | Description                               | Data Source                           | Frequency                            | Update Method                                                 |
+| --------------------------------- | ----------------------------------------- | ------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| **Rₑ** (Environmental Risk Score) | Measures disruption risk in worker's zone | Weather API, AQI API, historical data | Every 3–6 hours (weekly aggregation) | Calculated using normalized rain, heat, and AQI components    |
+| **S_w** (Worker Stability Score)  | Measures worker consistency and activity  | App usage, delivery activity logs     | Daily/Weekly                         | Computed from active days, working hours, and completion rate |
+| **Cₜ** (Coverage Tier Factor)     | Determines protection level               | User input (app selection)            | On user change                       | Fixed values: Basic (0.4), Standard (0.6), Premium (0.8)      |
+| **B** (Base Premium)              | Minimum base cost of insurance            | System configuration                  | Rarely updated                       | Platform-defined baseline value                               |
+| **α** (Risk Sensitivity)          | Controls environmental risk impact        | System configuration                  | Rarely updated                       | Admin tuned based on risk trends                              |
+| **β** (Stability Reward)          | Controls stability-based discount         | System configuration                  | Rarely updated                       | Adjusted to balance fairness and incentives                   |
+| **P** (Final Premium)             | Weekly insurance premium                  | Derived from all variables            | Weekly                               | Computed via pricing formula with smoothing and constraints   |
 
 ---
 
@@ -677,23 +681,16 @@ PostgreSQL / Supabase
 
 ### External APIs & Data Sources
 
-| API / Source | Data Provided | Role in System | Link |
-| --- | --- | --- | --- |
-| OpenWeather API | Rainfall, temperature, weather conditions | Real-time environmental trigger detection and risk score calculation | https://openweathermap.org |
-| OpenAQ API | Air Quality Index (AQI) levels | AQI-based triggers and environmental risk modeling | https://docs.openaq.org |
-| Google Maps API | Traffic data, route delays, road conditions | Multi-condition triggers and disruption severity estimation | https://developers.google.com/maps |
-| Government Alert Systems (NDMA) | Curfew, restriction, emergency alerts | Social triggers (zone shutdown, restrictions) | https://ndma.gov.in |
-| Open Government Data (data.gov) | Regional datasets, zone-level information | Zone validation and disruption confirmation | https://data.gov.in |
-| Flood Monitoring (FFS) | River levels, flood alerts | Flood trigger validation and high-risk detection | https://ffs.india-water.gov.in |
-| Satellite Weather (MOSDAC - ISRO) | Satellite weather, flood monitoring | Advanced environmental validation and accuracy improvement | https://mosdac.gov.in |
-| Platform APIs (Simulated) | Delivery demand, zone closures, worker activity | Activity drop detection and trigger validation | Simulated |
-
----
-
-## System Architecture
-
-![System Architecture Diagram](diagrams/architecture_diagram.jpeg)
-
+| API / Source                      | Data Provided                                   | Role in System                                                       | Link                               |
+| --------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------- |
+| OpenWeather API                   | Rainfall, temperature, weather conditions       | Real-time environmental trigger detection and risk score calculation | https://openweathermap.org         |
+| OpenAQ API                        | Air Quality Index (AQI) levels                  | AQI-based triggers and environmental risk modeling                   | https://docs.openaq.org            |
+| Google Maps API                   | Traffic data, route delays, road conditions     | Multi-condition triggers and disruption severity estimation          | https://developers.google.com/maps |
+| Government Alert Systems (NDMA)   | Curfew, restriction, emergency alerts           | Social triggers (zone shutdown, restrictions)                        | https://ndma.gov.in                |
+| Open Government Data (data.gov)   | Regional datasets, zone-level information       | Zone validation and disruption confirmation                          | https://data.gov.in                |
+| Flood Monitoring (FFS)            | River levels, flood alerts                      | Flood trigger validation and high-risk detection                     | https://ffs.india-water.gov.in     |
+| Satellite Weather (MOSDAC - ISRO) | Satellite weather, flood monitoring             | Advanced environmental validation and accuracy improvement           | https://mosdac.gov.in              |
+| Platform APIs (Simulated)         | Delivery demand, zone closures, worker activity | Activity drop detection and trigger validation                       | Simulated                          |
 
 ---
 
