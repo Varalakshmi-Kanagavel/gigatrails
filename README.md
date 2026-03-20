@@ -690,7 +690,40 @@ PostgreSQL / Supabase
 
 ## System Architecture
 
-_(Architecture diagram will be included here in the repository)_
+```mermaid
+graph TD
+  %% Styling
+  classDef frontend fill:#4b3f72,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef backend fill:#116466,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef aiml fill:#8b4513,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef database fill:#1f5f99,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef realtime fill:#b87333,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef apis fill:#6b2d5c,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef payments fill:#2e5c2e,stroke:#fff,stroke-width:2px,color:#fff;
+  classDef devops fill:#333,stroke:#fff,stroke-width:2px,color:#fff;
+
+  %% Nodes
+  App["📱 Frontend<br/>(Flutter, Riverpod, Dio, Maps SDK)"]:::frontend
+  CoreAPI["⚙️ Backend<br/>(FastAPI, Python, Background Tasks)"]:::backend
+  ML["🧠 AI / ML Engine<br/>(Scikit-learn, XGBoost, Pandas, NumPy)"]:::aiml
+  DB["🗄️ Database<br/>(PostgreSQL, Redis Caching)"]:::database
+  RealTime["⚡ Real-Time<br/>(WebSockets, Redis Pub-Sub)"]:::realtime
+  ExtAPI["🌐 External APIs<br/>(Weather, AQI, NDMA, MOSDAC, Maps)"]:::apis
+  Pay["💳 Payments<br/>(Razorpay, Stripe Sandbox)"]:::payments
+  SecDevOps["🚀 Security & Deployment<br/>(Render/AWS, CI/CD, JWT, Rate Limits)"]:::devops
+
+  %% Routing
+  App -->|REST API| CoreAPI
+  App <-->|Live Updates| RealTime
+
+  CoreAPI -->|Risk Scoring & Fraud| ML
+  CoreAPI -->|Read/Write| DB
+  CoreAPI -->|Fetch Environment Data| ExtAPI
+  CoreAPI -->|Process Payouts| Pay
+
+  RealTime -.->|Pub/Sub| DB
+  CoreAPI -.->|Protected & Deployed by| SecDevOps
+```
 
 ---
 
