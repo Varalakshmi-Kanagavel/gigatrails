@@ -623,7 +623,7 @@ GigaTrails AI follows a **practical AI approach**:
 
 ---
 
-## This approach ensures that the system is **accurate, scalable, and aligned with real-world insurance requirements**, while remaining efficient for implementation in a hackathon setting.
+This approach ensures that the system is **accurate, scalable, and aligned with real-world insurance requirements**, while remaining efficient for implementation in a hackathon setting.
 
 ---
 
@@ -673,17 +673,3 @@ The final stage will include:
 - Analytics dashboard
 
 ---
-
-## Innovation Highlights
-
-GigaTrails AI introduces an automated parametric insurance system specifically designed for gig delivery workers.
-
-Key innovations include:
-
-- AI-driven risk-based premium calculation
-- Automated claim settlement without manual intervention
-- Real-time environmental disruption monitoring
-- Multi-factor verification using GPS, environmental APIs, and optional camera input
-- Mobile-first design tailored for gig workers
-
-By combining artificial intelligence, environmental data, and automated insurance logic, GigaTrails AI provides gig workers with a reliable and scalable financial safety net.
