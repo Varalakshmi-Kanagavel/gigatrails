@@ -518,9 +518,11 @@ Parametric Triggers
 
 Parametric triggers define the predefined conditions under which insurance coverage is automatically activated.
 
-## Instead of manual claim requests, GigaTrails AI uses a real-time, rule-based trigger engine that continuously evaluates environmental and system signals to detect disruptions.
+# Instead of manual claim requests, GigaTrails AI uses a real-time, rule-based trigger engine that continuously evaluates environmental and system signals to detect disruptions.
 
 ## ![User Flow Diagram](diagrams/final_decion_1.png)
+
+---
 
 ## AI and Machine Learning Integration
 
