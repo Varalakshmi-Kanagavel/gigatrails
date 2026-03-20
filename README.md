@@ -162,37 +162,201 @@ The compensation model considers:
 
 The payout is then aggregated into the worker’s weekly earnings.
 
-Workers receive compensation automatically through a simulated digital payment system.
+## Workers receive compensation automatically through a simulated digital payment system.
 
 ---
 
-# Weekly Premium Model
+# Weekly Premium Model & Pricing Intelligence
 
-GigaTrails AI follows a **weekly insurance pricing model** aligned with gig workers’ earning cycles.
+GigaTrails AI follows a **Hybrid Risk-Behavior Pricing Model** designed to dynamically calculate weekly insurance premiums based on environmental conditions, worker activity, and selected coverage level.
 
-Instead of requiring long-term insurance commitments, workers subscribe to affordable weekly protection.
+Unlike static pricing systems, this model ensures that premiums are:
 
-### Premium Calculation Factors
+- responsive to real-world disruptions
+- personalized to each worker
+- fair and sustainable
 
-Premiums are determined based on:
+---
 
-- city risk index
-- historical weather disruptions
-- pollution levels
-- delivery demand density
-- rider working hours
+## Policy Tiers
 
-### Example Pricing
+GigaTrails AI provides three flexible coverage tiers:
 
-| City      | Risk Tier | Typical Disruption Profile               | Suggested Weekly Premium |
-| --------- | --------- | ---------------------------------------- | ------------------------ |
-| Bangalore | Tier 1    | Moderate rain, low flood frequency       | INR 25                   |
-| Mumbai    | Tier 2    | Heavy seasonal rain, periodic flooding   | INR 35                   |
-| Delhi     | Tier 3    | Heatwave plus severe AQI disruption risk | INR 45                   |
+| Tier     | Coverage Scope                     | Protection | Factor (Cₜ) |
+| -------- | ---------------------------------- | ---------- | ----------- |
+| Basic    | Rain, Heatwave, Flood              | 40%        | 0.4         |
+| Standard | Basic + Air Quality disruptions    | 60%        | 0.6         |
+| Premium  | Standard + Government restrictions | 80%        | 0.8         |
 
-Note: These are **Phase 1 benchmark values** for demonstration. Final premiums will be dynamically calculated using real disruption data and rider activity patterns.
+---
 
-Dynamic pricing ensures that workers only pay premiums proportional to the risk of their operating environment.
+## Core Pricing Formula
+
+```math
+P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
+```
+
+---
+
+## Variable Definitions
+
+| Variable | Description                       |
+| -------- | --------------------------------- |
+| **P**    | Final weekly premium              |
+| **B**    | Base premium (minimum fixed cost) |
+| **Rₑ**   | Environmental risk score (0 to 1) |
+| **Cₜ**   | Coverage tier factor              |
+| **S_w**  | Worker stability score (0 to 1)   |
+| **α**    | Risk sensitivity coefficient      |
+| **β**    | Stability reward coefficient      |
+
+---
+
+## Environmental Risk Score (Rₑ)
+
+The environmental risk score represents the likelihood of disruptions in the worker’s delivery zone.
+
+It is computed using real-time and historical data from:
+
+- rainfall intensity
+- temperature (heatwave conditions)
+- air quality index (AQI)
+
+### Risk Calculation
+
+```math
+Rₑ = 0.4 × Rain Risk + 0.3 × Heat Risk + 0.3 × AQI Risk
+```
+
+Each component is normalized between **0 and 1**.
+
+### Update Frequency
+
+- Updated every few hours using API data
+- Aggregated weekly for pricing
+
+---
+
+## Worker Stability Score (S_w)
+
+This score represents how consistent and active a worker is.
+
+It is calculated based on:
+
+- number of active working days
+- average working hours
+- delivery completion consistency
+
+### Stability Calculation
+
+```math
+S_w = 0.5 × Consistency + 0.3 × Activity + 0.2 × Engagement
+```
+
+### Behavior Impact
+
+- High stability → lower premium
+- Low stability → higher premium
+
+---
+
+## Variable Update Mechanism
+
+The pricing model variables in GigaTrails AI are dynamically updated using real-time data, worker activity, and system controls.
+
+| Variable                             | Description                                     | Data Source                           | Update Frequency                    | Update Method                                                           |
+| ------------------------------------ | ----------------------------------------------- | ------------------------------------- | ----------------------------------- | ----------------------------------------------------------------------- |
+| **Rₑ (Environmental Risk Score)**    | Measures disruption risk in worker's zone       | Weather API, AQI API, historical data | Every 3–6 hours (aggregated weekly) | Calculated using normalized rain, heat, and AQI risk values             |
+| **S_w (Worker Stability Score)**     | Measures worker consistency and activity        | App usage, delivery activity logs     | Daily / Weekly                      | Computed using active days, working hours, and delivery completion rate |
+| **Cₜ (Coverage Tier Factor)**        | Determines level of protection selected by user | User input (app selection)            | On change (user-controlled)         | Assigned fixed values based on selected tier (Basic, Standard, Premium) |
+| **B (Base Premium)**                 | Minimum base cost of insurance                  | System configuration                  | Rarely updated                      | Fixed baseline value set by platform                                    |
+| **α (Risk Sensitivity Coefficient)** | Controls impact of environmental risk           | System configuration                  | Rarely updated                      | Tuned by admin based on risk trends                                     |
+| **β (Stability Reward Coefficient)** | Controls discount based on worker stability     | System configuration                  | Rarely updated                      | Adjusted to balance fairness and incentives                             |
+| **Final Premium (P)**                | Weekly insurance premium                        | Derived from all above variables      | Weekly                              | Computed using pricing formula with smoothing and constraints           |
+
+---
+
+### Update Flow Summary
+
+```text
+1. Fetch environmental data (weather, AQI)
+2. Compute environmental risk score (Rₑ)
+3. Collect worker activity data
+4. Compute stability score (S_w)
+5. Retrieve selected coverage tier (Cₜ)
+6. Apply pricing formula
+7. Apply constraints and smoothing
+8. Output final weekly premium (P)
+```
+
+## Premium Calculation Flow
+
+```text
+1. Fetch environmental data (weather, AQI)
+2. Compute environmental risk score (Rₑ)
+3. Collect worker activity data
+4. Compute stability score (S_w)
+5. Get selected coverage tier (Cₜ)
+6. Apply pricing formula
+7. Apply constraints and smoothing
+8. Generate final weekly premium
+```
+
+---
+
+## Example Calculation
+
+Given:
+
+- Base premium (B) = ₹20
+- Environmental risk (Rₑ) = 0.5
+- Tier = Standard → Cₜ = 0.6
+- Stability score (S_w) = 0.7
+- α = 0.8
+- β = 0.3
+
+```math
+P = 20 × (1 + 0.8 × 0.5) × 0.6 × (1 − 0.3 × 0.7)
+```
+
+Final Premium ≈ **₹26 – ₹32 per week**
+
+---
+
+## Pricing Constraints
+
+### Minimum Premium
+
+```text
+≥ ₹15
+```
+
+### Maximum Weekly Increase
+
+```text
+≤ 25% increase compared to previous week
+```
+
+---
+
+## Premium Smoothing
+
+To avoid sudden fluctuations:
+
+```math
+Final Premium = 0.7 × Previous + 0.3 × New
+```
+
+---
+
+## Zone-Based Pricing
+
+Premiums are calculated at a **micro-zone level**, not just city level.
+
+Examples:
+
+- High flood-prone zones → higher premium
+- Low-risk areas → lower premium
 
 ---
 
