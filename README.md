@@ -1,5 +1,3 @@
-
-
 # **GigaTrails AI – Parametric Insurance for Gig Delivery Workers**
 
 ## Overview
@@ -73,95 +71,165 @@ The compensation is then **automatically credited to her weekly payout**, with n
 
 # Solution Approach
 
-GigaTrails AI follows a **three-layer intelligent insurance architecture** that combines environmental monitoring, machine learning, and automated payout systems.
+GigaTrails AI is built using a **four-layer intelligent system architecture** that combines risk modeling, real-time monitoring, multi-factor verification, and automated compensation.
 
-The platform is designed to minimize manual intervention while ensuring reliable and fair compensation for delivery workers.
-
-The system consists of the following core components.
+This layered design ensures scalability, real-time responsiveness, and fraud-resistant insurance processing.
 
 ---
 
-## 1. Risk Intelligence Layer
+## 1. Risk Intelligence Layer (Core Decision Engine)
 
-The system first evaluates the **risk level of a worker's delivery zone** using historical environmental data and delivery activity.
+This layer is responsible for **risk modeling and pricing intelligence** at a micro-zone level.
 
-The AI risk engine analyzes factors such as:
+It combines environmental data and worker behavior to compute personalized insurance premiums.
+
+### Inputs
 
 - historical rainfall patterns
-- pollution trends
-- disruption frequency
+- temperature and heatwave trends
+- air quality index (AQI)
+- disruption frequency (floods, curfews)
 - delivery demand density
-- worker operating hours
+- worker activity patterns
 
-Using this information, machine learning models estimate the **probability of disruption events** in the worker’s delivery area.
+### Processing
 
-This allows the system to calculate a **dynamic weekly premium** that reflects the actual risk exposure of each worker.
+- Compute **Environmental Risk Score (Rₑ)**
+- Compute **Worker Stability Score (S_w)**
+- Apply **Hybrid Pricing Model**
 
----
+### Pricing Engine
 
-## 2. Disruption Monitoring Layer
+The weekly premium is calculated as:
 
-The platform continuously monitors real-world environmental data through multiple external APIs.
+```math
+P = B × (1 + αRₑ) × Cₜ × (1 − βS_w)
+```
 
-These include:
+### Output
 
-- weather monitoring systems
-- air quality monitoring services
-- city-level disruption alerts
-- delivery zone activity patterns
+- dynamic weekly premium
+- zone-level risk classification
+- disruption probability score
 
-When predefined environmental thresholds are exceeded, the system activates a **parametric trigger**.
+## 2. Disruption Monitoring Layer (Real-Time Trigger Engine)
 
-Parametric triggers represent events that significantly impact a delivery worker's ability to operate.
+This layer continuously monitors real-time external data streams to detect disruption events.
 
-Once a trigger is activated, the system automatically proceeds to disruption verification.
+### Data Sources
 
----
+- Weather APIs (rainfall, temperature)
 
-## 3. Smart Verification Layer
+- AQI APIs (pollution levels)
 
-To prevent fraud and ensure accurate payouts, GigaTrails AI uses **multi-factor disruption verification**.
+- Government alerts (curfews, restrictions)
 
-Instead of relying on a single signal, the system verifies disruptions using multiple data sources.
+- Traffic/mobility indicators (optional)
+
+### Trigger Logic
+
+```text
+IF rainfall > threshold AND duration > threshold
+AND worker is active in zone
+THEN trigger = TRUE
+```
+
+### Advanced Triggering
+
+- multi-condition triggers (rain + traffic slowdown)
+
+- time-aware triggers (peak-hour disruption impact)
+
+- zone-specific thresholds
+
+### Output
+
+- trigger event (TRUE / FALSE)
+
+- disruption severity score
+
+## 3. Smart Verification Layer (Fraud Control System)
+
+This layer ensures that all claims are valid, accurate, and fraud-resistant using multi-signal verification.
 
 ### Verification Signals
 
-**GPS Location Validation**
+1. GPS Geo-Fencing
 
-The system verifies that the worker was present within the affected delivery zone when the disruption occurred.
+- verifies worker presence in affected zone
 
-**Delivery Activity Signals**
+- detects GPS spoofing and mismatches
 
-Integration with simulated delivery data verifies that order activity dropped during the disruption period.
+2. Activity Drop Detection
 
-**Camera-Based Weather Confirmation (Optional)**
+- compares delivery activity before and during disruption
 
-Workers can optionally submit a quick photo of local conditions through the mobile app.
-Computer vision models analyze the image to confirm weather conditions such as heavy rain or flooding.
+- identifies abnormal drop patterns
 
-**Environmental API Confirmation**
+3. Time Correlation Check
 
-Weather APIs and AQI data confirm whether the disruption threshold was exceeded in the worker's location.
+- validates disruption timing against worker’s active hours
 
-By combining these signals, the system ensures **high reliability and fraud resistance**.
+4. Camera-Based Validation (Optional)
 
----
+- worker uploads real-time image
 
-## 4. Automated Compensation Layer
+  computer vision model detects:
+  - heavy rain
 
-Once the disruption is verified, the system calculates the estimated income loss.
+  - flooding
 
-The compensation model considers:
+  - low visibility conditions
+
+5. Environmental Cross-Validation
+
+- verifies API data consistency with actual disruption
+
+### Output
+
+- verified claim score (0–1)
+
+- fraud risk flag
+
+## 4. Automated Compensation Layer (Payout Engine)
+
+This layer calculates and processes income protection payouts.
+
+### Inputs
 
 - worker average hourly earnings
+
 - disruption duration
-- reduction in delivery activity
 
-The payout is then aggregated into the worker’s weekly earnings.
+- activity reduction percentage
 
-## Workers receive compensation automatically through a simulated digital payment system.
+- coverage tier (Cₜ)
 
----
+### Compensation Logic
+
+```text
+Compensation = Earnings × Loss Fraction × Coverage Factor
+```
+
+Where:
+
+- Loss Fraction = reduction in working hours or orders
+
+- Coverage Factor = based on selected tier
+
+### Features
+
+- weekly payout aggregation
+
+- instant payout simulation (Phase 3)
+
+- tier-based compensation adjustment
+
+### Output
+
+- final payout amount
+
+- credited to worker’s weekly earnings
 
 # Weekly Premium Model & Pricing Intelligence
 
