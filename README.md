@@ -97,6 +97,29 @@ This layered design ensures scalability, real-time responsiveness, and fraud-res
 
 ---
 
+## Architecture Explanation
+
+The GigaTrails AI system follows a **modular, event-driven architecture** that enables real-time disruption detection, intelligent pricing, and automated insurance payouts.
+
+### Key Flow Summary
+
+- The **mobile application** interacts with backend services through an API Gateway for authentication, routing, and data exchange.
+- External environmental data (weather, AQI, alerts) is continuously ingested and processed through a **real-time event pipeline (Redis Streams)**.
+- The **Parametric Trigger Engine** detects disruption events, which are further evaluated by the **Disruption Severity Engine** to measure impact.
+- The **Risk Intelligence Engine** computes environmental risk (Rₑ), worker stability (S_w), and dynamically calculates premiums.
+- The **Verification and Fraud Detection layers** ensure that only valid and genuine claims are processed.
+- The **Claim and Compensation Engines** calculate income loss and determine payouts based on coverage tiers.
+- Finally, the **Payment Service** processes payouts and the **Notification Service** informs the user in real time.
+
+### Design Highlights
+
+- **Event-driven processing** ensures low-latency and real-time responsiveness
+- **Micro-zone risk intelligence** enables personalized pricing
+- **Multi-layer fraud detection** improves reliability and trust
+- **Scalable modular design** allows easy expansion across cities and platforms
+
+This architecture ensures that the system is **efficient, scalable, and capable of fully automated parametric insurance processing**.
+
 ### 1. Risk Intelligence Layer (Core Decision Engine)
 
 This layer is responsible for **risk modeling and pricing intelligence** at a micro-zone level.
@@ -578,106 +601,9 @@ This helps improve premium accuracy and allows the system to notify workers abou
 
 ---
 
-## Platform Choice
-
-### Mobile Application
-
-The primary platform for GigaTrails AI will be a **mobile application**.
-
-This choice is based on the working environment of delivery riders.
-
-Benefits include:
-
-- Real-time GPS monitoring
-- Simple onboarding for workers
-- Push notifications for disruption alerts
-- Quick interaction during delivery operations
-
-The interface will be optimized for **minimal user interaction and fast access to key information**.
-
----
-
-## User Experience Design
-
-The application is designed to be simple and intuitive.
-
-### Home Screen
-
-Displays:
-
-- Active insurance coverage
-- Weekly premium
-- Disruption protection status
-
----
-
-### Disruption Alerts
-
-Workers receive notifications when environmental conditions activate insurance protection.
-
----
-
-### Earnings Protection Dashboard
-
-Workers can track:
-
-- Total protected income
-- Weekly compensation
-- Disruption events covered
-
----
-
 ## Technology Stack
 
 ![GigaTrails Tech Stack Diagram](diagrams/gigatrails_tech_stack_inline_svg.svg)
-
-### Frontend
-
-- Flutter Mobile Application
-
----
-
-### Backend
-
-- FastAPI
-- REST API architecture
-
----
-
-### AI / Machine Learning
-
-Primary language:
-
-- Python
-
-Libraries:
-
-- Scikit-learn
-- Pandas
-- NumPy
-
----
-
-### External APIs
-
-- Weather Data: OpenWeather API
-- Air Quality Data: AQICN API
-- Location Services: Google Maps API
-
----
-
-### Database
-
-PostgreSQL / Supabase
-
----
-
-### Payment Simulation
-
-- Razorpay Sandbox
-- Stripe Test Mode
-
----
 
 ### External APIs & Data Sources
 
