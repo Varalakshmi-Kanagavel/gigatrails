@@ -1,5 +1,21 @@
 # **GigaTrails AI – Parametric Insurance for Gig Delivery Workers**
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Problem Statement](#problem-statement)
+- [Target Persona](#target-persona)
+- [Solution Approach](#solution-approach)
+- [Weekly Premium Model & Pricing Intelligence](#weekly-premium-model--pricing-intelligence)
+- [Parametric Triggers](#parametric-triggers)
+- [AI and Machine Learning Integration](#ai-and-machine-learning-integration)
+- [Platform Choice](#platform-choice)
+- [User Experience Design](#user-experience-design)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Development Plan](#development-plan)
+- [Innovation Highlights](#innovation-highlights)
+
 ## Overview
 
 **GigaTrails AI** is an AI-powered parametric insurance platform designed to protect gig economy delivery workers from income loss caused by environmental or social disruptions.
